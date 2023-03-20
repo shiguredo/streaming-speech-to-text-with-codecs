@@ -8,10 +8,9 @@ config_setting(
 )
 
 config_setting(
-    name = "aarch64-macos",
+    name = "macos",
     constraint_values = [
         "@platforms//os:macos",
-        "@platforms//cpu:aarch64",
     ],
 )
 
@@ -87,6 +86,6 @@ alias(
     name = "main",
     actual = select({
         ":x86_64-linux": "main-linux",
-        ":aarch64-macos": "main-macos",
+        ":macos": "main-macos",
     }),
 )

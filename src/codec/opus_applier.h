@@ -1,12 +1,11 @@
 #pragma once
 
-#include "opus/opus.h"
-
 #include <cstdint>
 #include <memory>
 #include <vector>
 
 #include "applier_interface.h"
+#include "opus/opus.h"
 
 namespace codec {
 

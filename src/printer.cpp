@@ -6,11 +6,13 @@
 #include <string>
 #include <vector>
 
-std::shared_ptr<SharedPrinter> SharedPrinter::Create(const int output_num, const bool _erase_output) {
+std::shared_ptr<SharedPrinter> SharedPrinter::Create(const int output_num,
+                                                     const bool _erase_output) {
   return std::make_shared<SharedPrinter>(output_num, _erase_output);
 }
 
-SharedPrinter::SharedPrinter(const int output_num, const bool _erase_output) : erase_output(_erase_output) {
+SharedPrinter::SharedPrinter(const int output_num, const bool _erase_output)
+    : erase_output(_erase_output) {
   output_pairs.resize(output_num);
   for (auto &elem : output_pairs) {
     elem = std::make_pair("", "");

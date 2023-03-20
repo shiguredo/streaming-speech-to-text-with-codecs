@@ -1,10 +1,10 @@
 #include "codec/opus_applier.h"
 
-#include "opus/opus.h"
-
 #include <cstdint>
 #include <memory>
 #include <vector>
+
+#include "opus/opus.h"
 
 namespace codec {
 
