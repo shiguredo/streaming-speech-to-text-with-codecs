@@ -13,4 +13,6 @@ jobs:
         with:
           path: "~/.cache/bazel"
           key: bazel
+      - name: Install tensorflow dependencies
+        run: pip3 install numpy
       - run: bazel build //:main
