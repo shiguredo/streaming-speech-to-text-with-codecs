@@ -1,5 +1,17 @@
 # streaming speech to text with codecs
 
+## About Shiguredo's open source software
+
+We will not respond to PRs or issues that have not been discussed on Discord. Also, Discord is only available in Japanese.
+
+Please read https://github.com/shiguredo/oss before use.
+
+## 時雨堂のオープンソースソフトウェアについて
+
+利用前に https://github.com/shiguredo/oss をお読みください。
+
+## 概要
+
 [Opus](https://opus-codec.org/) や [lyra](https://github.com/google/lyra) などの音声圧縮コーデックを経由した音声を用いてリアルタイムに音声認識を行うための example です。
 
 ## Requirements
@@ -106,16 +118,6 @@ worker が利用するスレッド数を指定します。1worker あたり 4 �
 このプログラムでは whisper.cpp を利用し、CPU で推論を行っています。1 worker あたり 4 スレッドを割り当てることで、base モデルでおよそ 1 秒程度の遅延で文字起こしをすることができます。
 
 Whisper のモデルはリアルタイムに文字起こしをするためには制約が厳しい（入力が 30 秒の固定長音声であるなど）ため、多くのリアルタイム音声認識よりも遅延が大きくなってしまっています。Whisper や他の音声認識モデルを用いてより小さな遅延で音声認識を行う方法を模索中です。
-
-## About Shiguredo's open source software
-
-We will not respond to PRs or issues that have not been discussed on Discord. Also, Discord is only available in Japanese.
-
-Please read https://github.com/shiguredo/oss before use.
-
-## 時雨堂のオープンソースソフトウェアについて
-
-利用前に https://github.com/shiguredo/oss をお読みください。
 
 ## LICENSE
 
