@@ -18,3 +18,18 @@ jobs:
       - name: Apply formatter
         run: clang-format -Werror --dry-run $(find ./src -type f -regex ".+\.\(h\|cpp\)" -regextype posix-basic)
       - run: bazel build //:main
+
+  build-macos-x86_64:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: bazelbuild/setup-bazelisk@v2
+      - name: Mount bazel cache
+        uses: actions/cache@v3
+        with:
+          path: "~/.cache/bazel"
+          key: bazel-macos
+      - name: Install tensorflow dependencies
+        run: pip3 install numpy
+      - run: bazel build //:main
+      
