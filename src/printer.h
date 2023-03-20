@@ -16,7 +16,8 @@ class PrinterInterface {
 
 class SharedPrinter : public PrinterInterface {
  public:
-  static std::shared_ptr<SharedPrinter> Create(const int output_num, const bool _erase_output);
+  static std::shared_ptr<SharedPrinter> Create(const int output_num,
+                                               const bool _erase_output);
   SharedPrinter(const int output_num, const bool _erase_output);
   ~SharedPrinter() = default;
 

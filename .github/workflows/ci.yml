@@ -15,4 +15,6 @@ jobs:
           key: bazel
       - name: Install tensorflow dependencies
         run: pip3 install numpy
+      - name: Apply formatter
+        run: clang-format -Werror --dry-run $(find ./src -type f -regex ".+\.\(h\|cpp\)" -regextype posix-basic)
       - run: bazel build //:main

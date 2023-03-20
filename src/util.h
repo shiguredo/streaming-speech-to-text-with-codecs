@@ -33,4 +33,3 @@ WorkerParam parse_worker_param_tuple(const WorkerParamTuple &wptuple);
 std::string get_param_description(const WorkerParam &wp);
 
 bool pollevent();
-
