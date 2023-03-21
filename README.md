@@ -20,9 +20,15 @@ Linux, macOS (Apple Silicon) 上でのビルドに対応しています。Window
 
 Linux については Ubuntu 22.04 上でビルドができることを確認しています。
 
-ビルドのためには 5 系の[Bazel](https://bazel.build/)が必要です。（lyra のビルドが bazel v6 では失敗するため）
+ビルドのためには 5 系の[Bazel](https://bazel.build/)（lyra のビルドが bazel v6 では失敗するため）と numpy がインストールされている python が必要です。
 
 [Bazelisk](https://github.com/bazelbuild/bazelisk)経由で Bazel を利用すると自動でバージョンの問題を解決してくれるので Bazelisk を利用することをおすすめします。こちらは`go install`のコマンドで簡単にインストールできます。
+
+```bash
+# ビルドに必要な依存関係のインストール
+go install github.com/bazelbuild/bazelisk@latest
+pip3 install numpy
+```
 
 ## ビルド・実行手順
 
